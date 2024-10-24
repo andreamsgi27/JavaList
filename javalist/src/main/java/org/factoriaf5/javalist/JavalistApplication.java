@@ -1,6 +1,7 @@
 package org.factoriaf5.javalist;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.boot.SpringApplication;
@@ -11,7 +12,6 @@ public class JavalistApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(JavalistApplication.class, args);
-
 	}
 
 	public static void crearDias (){
@@ -25,9 +25,8 @@ public class JavalistApplication {
 		dias.add("Domingo");
 	}
 
-	public static List<String> verDias(){
-		List<String> dias = List.of("Lunes", "Martes", "Miércoles", "Jueves",  "Viernes", "Sábado", "Domingo");
-		return dias;
+	public static void verDias(List<String> dias){
+		System.out.println(dias);
 	}
 
 	public int largoSemana (List<String> verDias){
@@ -44,7 +43,8 @@ public class JavalistApplication {
 		return diaSemana;
 	}
 
-	public boolean diaExiste (List<String> verDias, int dia){
+	public boolean diaExiste (List<String> verDias){
+		String dia = "Jueves";
 		if (verDias.contains(dia)){
 			return true;
 		} else {
@@ -52,9 +52,9 @@ public class JavalistApplication {
 		}
 	}
 
-	
-
-
-
+	public List<String> ordenarDias (List<String> dias){
+		Collections.sort(dias);
+		return dias;
+	}
 
 }
