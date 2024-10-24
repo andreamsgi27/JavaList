@@ -12,17 +12,13 @@ public class JavalistApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(JavalistApplication.class, args);
+		
 	}
 
-	public static void crearDias (){
+	public List<String> crearDias (String dia){
 		List<String> dias = new ArrayList<>();
-		dias.add("Lunes");
-		dias.add("Martes");
-		dias.add("Miercoles");
-		dias.add("Jueves");
-		dias.add("Viernes");
-		dias.add("Sabado");
-		dias.add("Domingo");
+		dias.add(dia);
+		return dias;
 	}
 
 	public static void verDias(List<String> dias){
@@ -30,7 +26,7 @@ public class JavalistApplication {
 	}
 
 	public int largoSemana (List<String> verDias){
-		int largoSemana  = verDias.size();
+		int largoSemana = verDias.size();
 		return largoSemana;
 	}
 
@@ -43,8 +39,7 @@ public class JavalistApplication {
 		return diaSemana;
 	}
 
-	public boolean diaExiste (List<String> verDias){
-		String dia = "Jueves";
+	public boolean diaExiste (List<String> verDias, String dia){
 		if (verDias.contains(dia)){
 			return true;
 		} else {
