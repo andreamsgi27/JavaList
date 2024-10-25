@@ -15,7 +15,10 @@ public class JavalistApplication {
 		
 	}
 
-	public List<String> crearDias (String dia){
+	public List<String> crearDias(String dia) {
+		if (dia == null) {
+			throw new IllegalArgumentException("El día es inválido");
+		}
 		List<String> dias = new ArrayList<>();
 		dias.add(dia);
 		return dias;
@@ -34,9 +37,13 @@ public class JavalistApplication {
 		verDias.remove(0);
 	}
 
-	public String dia (List<String> verDias, int dia){
-		String diaSemana = verDias.get(dia);
-		return diaSemana;
+	public String dia (List<String> verDias, int posicionDia){
+		try {
+			String diaSemana = verDias.get(posicionDia);
+			return diaSemana;
+		} catch (IndexOutOfBoundsException e) {
+			return "El día no existe en la lista";
+		}
 	}
 
 	public boolean diaExiste (List<String> verDias, String dia){
