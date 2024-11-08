@@ -28,7 +28,7 @@ class JavalistApplicationTests {
     String dia = "Jueves";
 
     List<String> result = javalist.crearDias(dia);
-    // Assert
+    
     assertEquals(Arrays.asList("Jueves"), result);
 	}
 
@@ -37,7 +37,7 @@ class JavalistApplicationTests {
     String dia = "";
 
     List<String> result = javalist.crearDias(dia);
-    // Assert
+    
     assertEquals(Arrays.asList(""), result);
 	}
 
@@ -49,21 +49,13 @@ class JavalistApplicationTests {
 			assertEquals("El día es inválido", exception.getMessage());
 
 	}
-
-	/* @Test
-	void verDias(){
-		manager.verDias("Lunes");
-		//manager es algo que se usa para testear voids
-		assert
-	} */
-
 	@Test
 	void testLargoSemana(){
 		List<String> dias = new ArrayList<>();
 		dias.add("Lunes");
 		dias.add("Martes");
 		int result =  javalist.largoSemana(dias);
-		// Assert
+		
 		assertEquals(2, result);
 	}
 
@@ -75,7 +67,7 @@ class JavalistApplicationTests {
 		int posicionDia = 0;
 		String result = javalist.dia(dias, posicionDia);
 
-		// Assert
+
 		assertEquals("Lunes", result);
 	}
 
@@ -87,7 +79,7 @@ class JavalistApplicationTests {
 		int posicionDia = 5;
 		String result = javalist.dia(dias, posicionDia);
 
-		// Assert
+	
 		assertEquals("El día no existe en la lista", result);
 	}
 
@@ -100,7 +92,7 @@ class JavalistApplicationTests {
 		String dia = "Lunes";
 
 		boolean result  = javalist.diaExiste(dias, dia);
-		// Assert
+		
 		assertEquals(result, true);
 	}
 
@@ -113,7 +105,7 @@ class JavalistApplicationTests {
 		String dia = "Jueves";
 
 		boolean result  = javalist.diaExiste(dias, dia);
-		// Assert
+		
 		assertEquals(result, false);
 	}
 
@@ -126,7 +118,7 @@ class JavalistApplicationTests {
 		String dia = "";
 
 		boolean result  = javalist.diaExiste(dias, dia);
-		// Assert
+	
 		assertEquals(result, false);
 	}
 
